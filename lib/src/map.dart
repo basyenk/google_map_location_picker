@@ -246,6 +246,7 @@ class MapPickerState extends State<MapPicker> {
                         ),
                         Spacer(),
                         FloatingActionButton(
+                          backgroundColor: widget.iconColor,
                           onPressed: () {
                             Navigator.of(context).pop({
                               'location': LocationResult(
@@ -415,18 +416,20 @@ class _MapFabs extends StatelessWidget {
         children: <Widget>[
           if (layersButtonEnabled)
             FloatingActionButton(
+              backgroundColor: iconColor,
               onPressed: onToggleMapTypePressed,
               materialTapTargetSize: MaterialTapTargetSize.padded,
               mini: true,
-              child: Icon(Icons.layers, color: iconColor),
+              child: Icon(Icons.layers),
               heroTag: "layers",
             ),
           if (myLocationButtonEnabled)
             FloatingActionButton(
+              backgroundColor: iconColor,
               onPressed: onMyLocationPressed,
               materialTapTargetSize: MaterialTapTargetSize.padded,
               mini: true,
-              child: Icon(Icons.my_location, color: iconColor),
+              child: Icon(Icons.my_location),
               heroTag: "myLocation",
             ),
         ],
