@@ -195,6 +195,7 @@ class MapPickerState extends State<MapPicker> {
             layersButtonEnabled: widget.layersButtonEnabled,
             onToggleMapTypePressed: _onToggleMapTypePressed,
             onMyLocationPressed: _initCurrentLocation,
+            iconColor: widget.iconColor
           ),
           widget.customPin ?? pin(),
           locationCard(),
