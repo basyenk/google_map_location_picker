@@ -404,7 +404,7 @@ class _MapFabs extends StatelessWidget {
 
   final VoidCallback onToggleMapTypePressed;
   final VoidCallback onMyLocationPressed;
-  Color iconColor;
+  final Color iconColor;
 
   @override
   Widget build(BuildContext context) {
