@@ -37,6 +37,7 @@ class MapPicker extends StatefulWidget {
     this.resultCardPadding,
     this.customLocationCard,
     this.customPin,
+    this.appBarLeading,
   }) : super(key: key);
 
   final String apiKey;
@@ -61,6 +62,7 @@ class MapPicker extends StatefulWidget {
       customLocationCard;
 
   final Widget customPin;
+  final Widget appBarLeading;
 
   @override
   MapPickerState createState() => MapPickerState();
