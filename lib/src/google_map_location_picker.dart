@@ -38,6 +38,7 @@ class LocationPicker extends StatefulWidget {
     this.appBar,
     this.customPin,
     this.appBarLeading,
+    this.iconColor,
   });
 
   final String apiKey;
@@ -63,6 +64,7 @@ class LocationPicker extends StatefulWidget {
       customLocationCard;
   final Widget customPin;
   final Widget appBarLeading;
+  final Color iconColor;
   @override
   LocationPickerState createState() => LocationPickerState();
 }
@@ -404,6 +406,7 @@ class LocationPickerState extends State<LocationPicker> {
             customLocationCard: widget.customLocationCard,
             customPin: widget.customPin,
             appBarLeading: widget.appBarLeading,
+            iconColor: widget.iconColor,
           ),
         );
       }),
@@ -442,6 +445,7 @@ Future<LocationResult> showLocationPicker(
   Widget customPin,
   AppBar appBar,
   Widget appBarLeading = null,
+  Color iconColor = Colors.blue,
 }) async {
   final results = await Navigator.of(context).push(
     MaterialPageRoute<dynamic>(
@@ -466,6 +470,7 @@ Future<LocationResult> showLocationPicker(
           appBar: appBar,
           customPin: customPin,
           appBarLeading: appBarLeading,
+          iconColor: iconColor,
         );
       },
     ),

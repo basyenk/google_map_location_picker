@@ -38,6 +38,7 @@ class MapPicker extends StatefulWidget {
     this.customLocationCard,
     this.customPin,
     this.appBarLeading,
+    this.iconColor,
   }) : super(key: key);
 
   final String apiKey;
@@ -63,6 +64,7 @@ class MapPicker extends StatefulWidget {
 
   final Widget customPin;
   final Widget appBarLeading;
+  final Color iconColor;
 
   @override
   MapPickerState createState() => MapPickerState();
@@ -285,7 +287,7 @@ class MapPickerState extends State<MapPicker> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Icon(Icons.place, size: 56),
+            Icon(Icons.place, size: 56, color: widget.iconColor),
             Container(
               decoration: ShapeDecoration(
                 shadows: [
@@ -392,6 +394,7 @@ class _MapFabs extends StatelessWidget {
     @required this.layersButtonEnabled,
     @required this.onToggleMapTypePressed,
     @required this.onMyLocationPressed,
+    @required this.iconColor,
   })  : assert(onToggleMapTypePressed != null),
         super(key: key);
 
@@ -400,12 +403,13 @@ class _MapFabs extends StatelessWidget {
 
   final VoidCallback onToggleMapTypePressed;
   final VoidCallback onMyLocationPressed;
+  final Color iconColor;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.topRight,
-      margin: const EdgeInsets.only(top: kToolbarHeight + 24, right: 8),
+      margin: const EdgeInsets.only(top: kToolbarHeight + 48, right: 8),
       child: Column(
         children: <Widget>[
           if (layersButtonEnabled)
@@ -413,7 +417,7 @@ class _MapFabs extends StatelessWidget {
               onPressed: onToggleMapTypePressed,
               materialTapTargetSize: MaterialTapTargetSize.padded,
               mini: true,
-              child: const Icon(Icons.layers),
+              child: const Icon(Icons.layers, color: iconColor),
               heroTag: "layers",
             ),
           if (myLocationButtonEnabled)
@@ -421,7 +425,7 @@ class _MapFabs extends StatelessWidget {
               onPressed: onMyLocationPressed,
               materialTapTargetSize: MaterialTapTargetSize.padded,
               mini: true,
-              child: const Icon(Icons.my_location),
+              child: const Icon(Icons.my_location, color: iconColor),
               heroTag: "myLocation",
             ),
         ],
